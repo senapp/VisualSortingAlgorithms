@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    height: 30%;
+    align-items: center;
+}
+
+.cell {
+    border: 1px solid black;
+    border-radius: 20%;
+    height: 30px;
+    width: 30px;
+    align-content: center;
+    text-align: center;
+}
+
+.stored-cell {
+    position: absolute;
+    transform: translate(0, 70px);
+}
+
+.current-cell {
+    background-color: green;
+}
+
+.target-cell {
+}
+
+.animation-primary {
+    animation: moveToPrimary var(--animationSpeed) ease-in-out forwards;
+}
+
+.animation-secondary {
+    animation: moveToSecondary var(--animationSpeed) ease-in-out calc(var(--animationSpeed) * 0.75) forwards;
+}
+
+.animation-discard {
+    animation: discard var(--animationSpeed) ease-in-out calc(var(--animationSpeed) * 0.75) forwards;
+}
+
+.animation-store {
+    animation: store var(--animationSpeed) ease-in-out forwards;
+}
+
+.animation-set-from-stored {
+    animation: setFromStored var(--animationSpeed) ease-in-out forwards;
+}
+
+@keyframes moveToPrimary {
+    0% {
+        transform: translate(var(--start, 0), 0);
+    }
+    25% {
+        transform: translate(var(--start, 0), -40px);
+    }
+    75% {
+        transform: translate(var(--target), -40px);
+    }
+    100% {
+        transform: translate(var(--target), 0);
+    }
+  }
+
+@keyframes moveToSecondary {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(0, 40px);
+    }
+    75% {
+        transform: translate(var(--current), 40px);
+    }
+    100% {
+        transform: translate(var(--current), 0);
+    }
+  }
+
+  @keyframes discard {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(0, 40px) scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 40px) scale(1);
+        opacity: 0;
+    }
+  }
+
+  @keyframes store {
+    0% {
+        transform: translate(var(--start), 0);
+    }
+    25% {
+        transform: translate(var(--start), 35px);
+    }
+    75% {
+        transform: translate(0, 35px);
+    }
+    100% {
+        transform: translate(0, 70px);
+    }
+  }
+
+  @keyframes setFromStored {
+    0% {
+        transform: translate(0, 70px);
+    }
+    25% {
+        transform: translate(0, 35px);
+    }
+    75% {
+        transform: translate(var(--target), 35px);
+    }
+    100% {
+        transform: translate(var(--target), 0);
+    }
+  }
