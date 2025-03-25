@@ -271,9 +271,9 @@ export const RenderView: React.FC<Props> = ({  }) => {
                 </div>
             </div>
             <div className={css.sortTitle}>
-                Randomize Numbers:
+                Randomize:
                 <div className={css.sortContainer}>
-                    <Button disabled={isSorting} onClick={() => randomizeNumbers()} label='Randomize Numbers'></Button>
+                    <Button disabled={isSorting} onClick={() => randomizeNumbers()} label='Numbers'></Button>
                 </div>
             </div>
             <div className={css.sortTitle}>
