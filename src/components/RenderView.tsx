@@ -169,7 +169,7 @@ export const RenderView: React.FC<Props> = ({  }) => {
       }
 
     const randomizeNumbers = () => {
-        const newArray = Array.from({ length: Math.max(4, Math.floor(Math.random() * 16)) }, () => Math.floor(Math.random() * 100));
+        const newArray = Array.from({ length: Math.max(4, Math.floor(Math.random() * 8)) }, () => Math.floor(Math.random() * 100));
         setVisualArray(newArray);
     };
 

@@ -17,6 +17,7 @@
     place-items: center;
     display: flex;
     gap: 10px;
+    flex-flow: wrap;
 }
 
 .cell {
