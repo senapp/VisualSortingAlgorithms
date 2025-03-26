@@ -251,24 +251,30 @@ export const RenderView: React.FC<Props> = ({  }) => {
     return (<>
         <div className={css.buttonContainer}>
             <div className={css.sortTitle}>
-                Logarithmic Sorting:
+                ------Sorting------
+            </div>
+            <div className={css.sortTitle}>
+                Logarithmic:
                 <div className={css.sortContainer}>
-                    <Button disabled={isSorting} onClick={() => quickSortVisual()} label='Quick Sort'></Button>
+                    <Button disabled={isSorting} onClick={() => quickSortVisual()} label='Quick'></Button>
                 </div>
             </div>
             <div className={css.sortTitle}>
-                Quadratic Sorting:
+                Quadratic:
                 <div className={css.sortContainer}>
-                    <Button disabled={isSorting} onClick={() => bubbleSortVisual()} label='Bubble Sort'></Button>
-                    <Button disabled={isSorting} onClick={() => selectionSortVisual()} label='Selection Sort'></Button>
-                    <Button disabled={isSorting} onClick={() => insertionSortVisual()} label='Insertion Sort'></Button>
+                    <Button disabled={isSorting} onClick={() => bubbleSortVisual()} label='Bubble'></Button>
+                    <Button disabled={isSorting} onClick={() => selectionSortVisual()} label='Selection'></Button>
+                    <Button disabled={isSorting} onClick={() => insertionSortVisual()} label='Insertion'></Button>
                 </div>
             </div>
             <div className={css.sortTitle}>
-                "Terrible" Sorting:
+                "Terrible":
                 <div className={css.sortContainer}>
                     <Button disabled={isSorting} onClick={() => bogoSortVisual()} label='Bogo Sort'></Button>
                 </div>
+            </div>
+            <div className={css.sortTitle}>
+                ------Settings------
             </div>
             <div className={css.sortTitle}>
                 Randomize:
@@ -277,7 +283,7 @@ export const RenderView: React.FC<Props> = ({  }) => {
                 </div>
             </div>
             <div className={css.sortTitle}>
-                Animation Speed:
+                Speed:
                 <div className={css.sortContainer}>
                     <input disabled={isSorting} type="range" min="1" max="100" value={sliderValue} onChange={(e) => setSliderValue(parseInt(e.target.value))} className={css.slider} id="myRange"></input>
                 </div>
